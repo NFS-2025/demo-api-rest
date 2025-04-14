@@ -34,6 +34,7 @@ builder.Services.AddCors(options =>
                 ;
         });
 });
+
 builder.Services
     .AddAuthentication("ApiKey")
     .AddScheme<ApiKeyAuthenticationSchemeOptions, ApiKeyAuthenticationHandler>("ApiKey", opts => opts.ApiKey = builder.Configuration.GetValue<string>("AllowedApiKeys"));

@@ -11,6 +11,7 @@ namespace demo_api_rest.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<CsrfTrap> CsrfTraps { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
