@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using demo_api_rest.Models;
 using demo_api_rest.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace demo_api_rest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "ApiKey")]
     public class InscriptionController : ControllerBase
     {
         private readonly IUserService _userService;
