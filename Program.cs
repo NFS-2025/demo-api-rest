@@ -12,9 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configuration de la base de données LocalDB
+// Configuration de la base de données PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Enregistrement des services
 builder.Services.AddScoped<IUserService, UserService>();
@@ -34,7 +34,6 @@ builder.Services.AddCors(options =>
                 ;
         });
 });
-
 builder.Services
     .AddAuthentication("ApiKey")
     .AddScheme<ApiKeyAuthenticationSchemeOptions, ApiKeyAuthenticationHandler>("ApiKey", opts => opts.ApiKey = builder.Configuration.GetValue<string>("AllowedApiKeys"));
