@@ -26,7 +26,7 @@ builder.Services.AddCors(options =>
         {
             policy
                 .AllowAnyOrigin()
-                .WithHeaders(["X-API-KEY"])
+                .WithHeaders("X-API-KEY")
                 //.WithOrigins([frontUrl])
                 .AllowAnyHeader()
                 .AllowAnyMethod()

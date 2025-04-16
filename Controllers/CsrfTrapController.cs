@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using demo_api_rest.Models;
 using demo_api_rest.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace demo_api_rest.Controllers
 {
